@@ -122,6 +122,7 @@
             <form id="subscribeForm">
                 <input type="text" name="name" id="name" placeholder="Your Name" required>
                 <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <input type="subject" name="subject" id="email" placeholder="Your subject" required>
                 <button type="submit">Subscribe</button>
             </form>
         </section>
@@ -139,6 +140,7 @@
             
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
+            const subject = document.getElementById("subject").value;
             
             window.location.href = `mailto:nynightcompany@gmail.com?subject=New Subscription&body=Name: ${name}%0D%0AEmail: ${email}`;
         });
