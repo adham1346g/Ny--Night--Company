@@ -21,7 +21,7 @@
         header {
             background: rgba(17, 24, 39, 0.9);
             color: white;
-            padding: 1.5rem 2rem;
+            padding: 2rem 2rem; /* زيادة المساحة العلوية */
             text-align: center;
             position: fixed;
             width: 100%;
@@ -31,14 +31,14 @@
         }
 
         header h1 {
-            margin: 0;
+            margin: 0 0 1.5rem 0; /* إضافة هامش سفلي */
             font-size: 2rem;
             font-weight: bold;
         }
 
         /* Home Button */
         .home-link {
-            margin-top: 5rem;
+            margin-top: 6rem; /* جعل زر Home يظهر بوضوح */
         }
 
         .home-link a {
@@ -60,9 +60,9 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            padding: 4rem 2rem;
+            padding: 6rem 2rem 4rem; /* زيادة المساحة العلوية */
             max-width: 1200px;
-            margin: 2rem auto;
+            margin: 0 auto;
         }
 
         /* Project Card */
@@ -179,7 +179,7 @@
 
             <!-- Project 2 -->
             <div class="project-card">
-                <img src="4FCFD8FE-A564-4E9D-9BDF-0BE0BB449260.webp" alt="AI Chatbot">
+                <img src="AIP.webp" alt="AI Chatbot">
                 <div class="content">
                     <h2>AI Chatbot</h2>
                     <p>An AI-powered chatbot built using DeepSeek and Flask, capable of real-time interaction and answering queries.</p>
@@ -195,7 +195,7 @@
 
             <!-- Project 3 -->
             <div class="project-card">
-                <img src="7DCA31E1-AB61-4CFB-9520-E981DD43199D.webp" alt="To-Do List App">
+                <img src="todo.webp" alt="To-Do List App">
                 <div class="content">
                     <h2>To-Do List App</h2>
                     <p>A beautiful and user-friendly iOS app to manage your daily tasks efficiently.</p>
@@ -203,21 +203,6 @@
                         <span>Swift</span>
                         <span>UIKit</span>
                         <span>CoreData</span>
-                    </div>
-                    <a href="#" class="btn">View Project</a>
-                </div>
-            </div>
-
-            <!-- Project 4 -->
-            <div class="project-card">
-                <img src="7E263B1A-A078-4E47-9D63-2BB50A48ED81.webp" alt="Fitness App">
-                <div class="content">
-                    <h2>Android Fitness App</h2>
-                    <p>A powerful fitness tracking app for Android that monitors workouts, calories, and progress.</p>
-                    <div class="tech-stack">
-                        <span>Kotlin</span>
-                        <span>Firebase</span>
-                        <span>Room Database</span>
                     </div>
                     <a href="#" class="btn">View Project</a>
                 </div>
