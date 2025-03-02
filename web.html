@@ -77,18 +77,6 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .contact-icons {
-            display: flex;
-            gap: 1em;
-            align-items: center;
-        }
-        .contact-icons a {
-            text-decoration: none;
-        }
-        .contact-icons img {
-            width: 40px;
-            height: 40px;
-        }
     </style>
 </head>
 <body>
@@ -131,10 +119,10 @@
         <section id="subscribe">
             <h2>Stay Updated</h2>
             <h3>Subscribe for updates and offers</h3>
-            <form>
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <button type="button" onclick="subscribe()">Subscribe</button>
+            <form id="subscribeForm">
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <input type="email" name="email" id="email" placeholder="Your Email" required>
+                <button type="submit">Subscribe</button>
             </form>
         </section>
     </main>
@@ -143,20 +131,17 @@
         <small>
             <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a>
         </small>
-        <div class="contact-icons">
-            <a href="https://wa.me/2001555630973" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            </a>
-            <a href="mailto:nynightcompany@gmail.com">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail">
-            </a>
-        </div>
     </footer>
     
     <script>
-        function subscribe() {
-            alert("Thank you for subscribing!");
-        }
+        document.getElementById("subscribeForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            
+            window.location.href = `mailto:nynightcompany@gmail.com?subject=New Subscription&body=Name: ${name}%0D%0AEmail: ${email}`;
+        });
     </script>
 </body>
 </html>
