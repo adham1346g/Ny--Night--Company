@@ -4,23 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ny-Night Projects</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
-        /* Base Styles */
+        /* General Styles */
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9fafb;
-            color: #111827;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
         }
 
         /* Header */
         header {
-            background-color: #1d4ed8;
+            background: rgba(17, 24, 39, 0.9);
             color: white;
             padding: 1.5rem 2rem;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
         header h1 {
@@ -29,178 +36,137 @@
             font-weight: bold;
         }
 
+        /* Home Button */
+        .home-link {
+            margin-top: 5rem;
+        }
+
+        .home-link a {
+            text-decoration: none;
+            background: #1d4ed8;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .home-link a:hover {
+            background: #0d3b96;
+        }
+
         /* Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            padding: 2rem;
+            padding: 4rem 2rem;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 2rem auto;
         }
 
         /* Project Card */
         .project-card {
-            background: white;
-            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
         }
 
         .project-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            border-radius: 8px;
         }
 
         .project-card .content {
-            padding: 1.5rem;
+            padding-top: 1.2rem;
         }
 
         .project-card h2 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
-            margin: 0 0 1rem;
-            color: #1d4ed8;
+            color: #10a37f;
         }
 
         .project-card p {
             font-size: 1rem;
-            color: #4b5563;
-            margin: 0 0 1.5rem;
+            color: #d1d5db;
+            margin-bottom: 1rem;
         }
 
         .project-card .tech-stack {
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
         }
 
         .project-card .tech-stack span {
-            background: #e5e7eb;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
             font-size: 0.875rem;
-            color: #374151;
+            color: #e5e7eb;
         }
 
         .project-card .btn {
             display: inline-block;
-            background: #1d4ed8;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
+            background: #10a37f;
+            color: black;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
             text-decoration: none;
             font-weight: 500;
-            transition: background 0.3s ease;
+            transition: background 0.3s ease-in-out;
         }
 
         .project-card .btn:hover {
-            background: #1e3a8a;
+            background: #0d8061;
         }
 
         /* Footer */
         footer {
-            background: #1d4ed8;
+            background: rgba(17, 24, 39, 0.9);
             color: white;
             text-align: center;
             padding: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        footer p {
-            margin: 0;
             font-size: 0.875rem;
         }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease-in-out;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card img {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-        }
-        .card h2 {
-            font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .card button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .card button:hover {
-            background-color: #0056b3;
-        }
-        li {
-          list-style: none;
-          margin: 20px;
-      }
-      
-      li a {
-          text-decoration: none;
-          background-color: #007bff;
-          color: white;
-          padding: 10px 20px;
-          border-radius: 5px;
-          font-weight: bold;
-          transition: background-color 0.3s ease-in-out;
-      }
-      
-      li a:hover {
-          background-color: #0056b3;
-      }
     </style>
 </head>
 <body>
+
+    <!-- Header -->
     <header>
-        <h1>Ny-Night Platform</h1>
+        <h1>Ny-Night Projects</h1>
     </header>
 
-    <li><a href="index.html">Home</a></li>
+    <!-- Home Button -->
+    <div class="home-link">
+        <a href="index.html">🏠 Home</a>
+    </div>
 
+    <!-- Projects Section -->
     <main>
         <div class="projects-grid">
             <!-- Project 1 -->
             <div class="project-card">
-                <img src="https://via.placeholder.com/400x200" alt="Project 1">
+                <img src="https://via.placeholder.com/400x200" alt="E-Commerce Platform">
                 <div class="content">
                     <h2>E-Commerce Platform</h2>
-                    <p>A fully functional e-commerce platform with user authentication, product management, and payment integration.</p>
+                    <p>Build and manage an online store with seamless user authentication, product management, and payment integration.</p>
                     <div class="tech-stack">
                         <span>React</span>
                         <span>Node.js</span>
@@ -213,10 +179,10 @@
 
             <!-- Project 2 -->
             <div class="project-card">
-                <img src="4FCFD8FE-A564-4E9D-9BDF-0BE0BB449260.webp" alt="Project 2">
+                <img src="4FCFD8FE-A564-4E9D-9BDF-0BE0BB449260.webp" alt="AI Chatbot">
                 <div class="content">
                     <h2>AI Chatbot</h2>
-                    <p>An AI-powered chatbot built using DeepSeek and Flask, capable of answering user queries in real-time.</p>
+                    <p>An AI-powered chatbot built using DeepSeek and Flask, capable of real-time interaction and answering queries.</p>
                     <div class="tech-stack">
                         <span>Python</span>
                         <span>Flask</span>
@@ -229,10 +195,10 @@
 
             <!-- Project 3 -->
             <div class="project-card">
-                <img src="7DCA31E1-AB61-4CFB-9520-E981DD43199D.webp" alt="Project 3">
+                <img src="7DCA31E1-AB61-4CFB-9520-E981DD43199D.webp" alt="To-Do List App">
                 <div class="content">
-                    <h2>To do list App for iOS</h2>
-                    <p>A mobile application for iOS that helps users track their daily tasks.</p>
+                    <h2>To-Do List App</h2>
+                    <p>A beautiful and user-friendly iOS app to manage your daily tasks efficiently.</p>
                     <div class="tech-stack">
                         <span>Swift</span>
                         <span>UIKit</span>
@@ -244,10 +210,10 @@
 
             <!-- Project 4 -->
             <div class="project-card">
-                <img src="7E263B1A-A078-4E47-9D63-2BB50A48ED81.webp" alt="Project 4">
+                <img src="7E263B1A-A078-4E47-9D63-2BB50A48ED81.webp" alt="Fitness App">
                 <div class="content">
                     <h2>Android Fitness App</h2>
-                    <p>A fitness tracking app for Android that monitors workouts, calories, and progress.</p>
+                    <p>A powerful fitness tracking app for Android that monitors workouts, calories, and progress.</p>
                     <div class="tech-stack">
                         <span>Kotlin</span>
                         <span>Firebase</span>
@@ -259,8 +225,10 @@
         </div>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Ny-Night. All Rights Reserved.</p>
+        <p>&copy; 2025 Ny-Night. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
